@@ -9,10 +9,16 @@ function ajustaTamanhoJogo() {
 ajustaTamanhoJogo();
 
 function posicaoRandomica() {
+  //remover o mosquito anterior (caso exista)
+  if(document.getElementById('mosquito')) { //vendo se existe mosquito
+    document.getElementById('mosquito').remove(); //removendo
+  }
+  
+
   var posicaoX = Math.floor(Math.random() * largura) - 90;
   var posicaoY = Math.floor(Math.random() * altura) - 90;
 
-  posicaoX = posicaoX < 0 ? 0 : posicaoX; //condição ? true : false;
+  posicaoX = posicaoX < 0 ? 0 : posicaoX; //condição ? true : false
   posicaoY = posicaoY < 0 ? 0 : posicaoY;
 
   //criando o elemento html
@@ -22,6 +28,7 @@ function posicaoRandomica() {
   mosquito.style.left = posicaoX + 'px';
   mosquito.style.top = posicaoY + 'px';
   mosquito.style.position = 'absolute';
+  mosquito.id = 'mosquito';
 
   document.body.appendChild(mosquito); //adicionando um filho para o body
 }

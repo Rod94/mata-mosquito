@@ -10,7 +10,9 @@
 </head>
 <body onresize="ajustaTamanhoJogo()">
   <script>
-    posicaoRandomica()
+    setInterval(function() { //intervalo de tempo em que aparece o mosquito
+      posicaoRandomica()
+    }, 1000)
   </script>
   
 </body>
