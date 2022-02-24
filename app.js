@@ -2,6 +2,17 @@ var altura = 0;
 var largura = 0;
 var vidas = 3;
 var tempo = 10;
+var nivel = window.location.search;
+nivel = nivel.replace('?', '');
+var criaMosquitoTempo = 1500;
+
+if (nivel === 'normal') {
+  criaMosquitoTempo = 1500;
+} else if (nivel === 'dificil') {
+  criaMosquitoTempo = 1000;
+} else if (nivel === 'impossivel') {
+  criaMosquitoTempo = 500;
+}
 
 function ajustaTamanhoJogo() {
   altura = window.innerHeight;
